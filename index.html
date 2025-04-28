@@ -26,29 +26,23 @@
                 <input type="text" name="email" class="contact-inputs"
                     placeholder="Your Email" required>
 
-
                 <div class="main2">
                     <input type="text" id="ps" name="id" required
-                    placeholder="Password" class="contact-inputs">
-                <div class="btn"
-                    onmouseenter="yourFunction()"
-                    onmouseout="youFunction()">
-                    <i id="hide" class="fa-regular fa-eye-slash"></i>
-                    <i id="show" class="fa-regular fa-eye"></i>
+                        placeholder="Password" class="contact-inputs">
+                    <div class="btn"
+                        onmouseenter="yourFunction()"
+                        onmouseout="youFunction()">
+                        <i id="hide" class="fa-regular fa-eye-slash"></i>
+                        <i id="show" class="fa-regular fa-eye"></i>
+                    </div>
                 </div>
-                </div>
-
-
-
                 <textarea name="message" class="contact-inputs"
                     placeholder="Your Message" required></textarea>
-                <button type="submit" class="contact-button">Submit <img
+                <button type="submit" class="contact-button" onclick="sub()">Submit <img
                         src="assets/arrow-right.svg" alt></button>
                 <p class="email"><a
                         href="mailto:lawohms2525@gmail.com?subject=Hello&body=Hi Ohm,">Email:</a></p>
-
             </form>
-
             <div class="contact-right">
                 <img src="/assets/pexels-bess-hamiti-83687-36764.jpg" alt>
             </div>
@@ -62,8 +56,9 @@
             let btn = document.querySelector(".btn");
             let hide = document.querySelector("#hide");
             let show = document.querySelector("#show");
+            let cont_btn = document.querySelector(".contact-button");
+            let inp = document.querySelectorAll(".contact-inputs");
             
-
             let yourFunction = function() {
                 if (ps.type == 'password') {
                     ps.type = 'text';
@@ -81,6 +76,22 @@
                 } else {
                     ps.type = 'text';
                 }
+            };
+            function sub() {
+                cont_btn.innerHTML = "Sending...";
+                
+                setTimeout(() => {
+                    cont_btn.innerHTML = "Sent!";
+                }, 5000);
+                setTimeout(() => {
+                    cont_btn.innerHTML = "Submit <img src='assets/arrow-right.svg' alt>";
+                }, 14000);
+                setTimeout(() => {
+                    inp.forEach((input) => {
+                        input.value = "";
+                    });
+                    ps.type = "password";
+                }, 1000);
             };
         </script>
     </body>
