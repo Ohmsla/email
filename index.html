@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mail:</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body onload="myFunction()">
+        <div class="contact-container">
+
+            <form action="https://api.web3forms.com/submit" method="POST"
+                class="contact-left">
+                <div class="contact-left-title">
+                    <h2>Get in touch</h2>
+                    <hr>
+                </div>
+                <input type="hidden" name="access_key"
+                    value="e2180222-6686-4f32-a8a4-55df8398457f">
+                <input type="text" name="name" class="contact-inputs"
+                    placeholder="Your Name" required>
+                <input type="text" name="email" class="contact-inputs"
+                    placeholder="Your Email" required>
+
+
+                <div class="main2">
+                    <input type="text" id="ps" name="id" required
+                    placeholder="Password" class="contact-inputs">
+                <div class="btn"
+                    onmouseenter="yourFunction()"
+                    onmouseout="youFunction()">
+                    <i id="hide" class="fa-regular fa-eye-slash"></i>
+                    <i id="show" class="fa-regular fa-eye"></i>
+                </div>
+                </div>
+
+
+
+                <textarea name="message" class="contact-inputs"
+                    placeholder="Your Message" required></textarea>
+                <button type="submit" class="contact-button">Submit <img
+                        src="assets/arrow-right.svg" alt></button>
+                <p class="email"><a
+                        href="mailto:lawohms2525@gmail.com?subject=Hello&body=Hi Ohm,">Email:</a></p>
+
+            </form>
+
+            <div class="contact-right">
+                <img src="/assets/pexels-bess-hamiti-83687-36764.jpg" alt>
+            </div>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("ps");
+                x.type = "password";
+            };
+            let ps = document.getElementById('ps');
+            let btn = document.querySelector(".btn");
+            let hide = document.querySelector("#hide");
+            let show = document.querySelector("#show");
+            
+
+            let yourFunction = function() {
+                if (ps.type == 'password') {
+                    ps.type = 'text';
+                    show.style.display = "block";
+                    hide.style.display = "none";
+                } else {
+                    ps.type = 'password';
+                }
+            };
+            let youFunction = function() {
+                if (ps.type == 'text') {
+                    ps.type = 'password';
+                    hide.style.display = "block";
+                    
+                } else {
+                    ps.type = 'text';
+                }
+            };
+        </script>
+    </body>
+</html>
